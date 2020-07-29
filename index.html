@@ -9,13 +9,21 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    
+
+    <!-- Checking fbpx parameter -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let fbpxParameter = urlParams.get('fbpx');
+        if (fbpxParameter == null) { fbpxParameter = '123456789123456' }
+        console.log(fbpxParameter);
+    </script>
+
     <!-- Facebook Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -23,14 +31,16 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '123456789123456');
+        fbq('init', fbpxParameter);
         fbq('track', 'PageView');
         fbq('track', 'ViewContent');
         fbq('track', 'Lead');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=123456789123456&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none" src="" id="pixelImg" /></noscript>
     <!-- End Facebook Pixel Code -->
+    <script>
+        document.getElementById('pixelImg').src = "https://www.facebook.com/tr?id=" + fbpxParameter + "&ev=PageView&noscript=1";
+    </script>
 </head>
 
 <body>
