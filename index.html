@@ -36,10 +36,12 @@
         fbq('track', 'ViewContent');
         fbq('track', 'Lead');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="" id="pixelImg" /></noscript>
+    <noscript>
+        <div id="pixelImg"></div>
+    </noscript>
     <!-- End Facebook Pixel Code -->
     <script>
-        document.getElementById('pixelImg').src = "https://www.facebook.com/tr?id=" + fbpxParameter + "&ev=PageView&noscript=1";
+        document.getElementById('pixelImg').innerHTML("<img height=\"1\" width=\"1\" style=\"display:none\" src='https://www.facebook.com/tr?id=" + fbpxParameter + "&ev=PageView&noscript=1' />");
     </script>
 </head>
 
