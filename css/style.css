@@ -1,0 +1,178 @@
+body {
+    background-color: black;
+    background: url("../img/bg.jpg") no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    line-height: 30px;
+}
+:root {
+    --danger: #f3466e;
+    --dangerLighter: #fc527a;
+    --dangerDarker: #ce3a5d;
+    --blue: #61afe0;
+    --line: #dedede;
+    --placeholder: #09527f;
+}
+.form__border {
+    background: -o-repeating-linear-gradient(315deg, var(--danger) 0, var(--danger) 12px, white 0, white 24px, var(--blue) 0, var(--blue) 34px, white 0, white 48px);
+    background: repeating-linear-gradient(135deg, var(--danger) 0, var(--danger) 12px, white 0, white 24px, var(--blue) 0, var(--blue) 34px, white 0, white 48px);
+    background-size: 100% 100%;
+    border-radius: 15px;
+    padding: 10px;
+}
+.form__content {
+    background-color: white;
+    border-radius: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 25px 33px;
+}
+.form__content-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin-left: 40px;
+}
+.form-field {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(50%, white), color-stop(70%, var(--line)), color-stop(77%, var(--line)), to(white));
+    background-image: -o-linear-gradient(white, white 50%, var(--line) 70%, var(--line) 77%, white);
+    background-image: linear-gradient(white, white 50%, var(--line) 70%, var(--line) 77%, white);
+    background-position: 0 2.3em;
+    background-repeat: repeat-x;
+    background-size: 3px 8px;
+}
+input {
+    outline: none;
+    border: 0;
+    width: 140px;
+    margin: 0 20px 24px 0;
+    padding-top: 11px;
+    cursor: text;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--placeholder);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--placeholder);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--placeholder);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--placeholder);
+}
+input::placeholder,
+textarea::placeholder {
+    color: var(--placeholder);
+}
+input:hover::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder {
+    opacity: .5;
+}
+input:hover::-moz-placeholder,
+textarea:hover::-moz-placeholder {
+    opacity: .5;
+}
+input:hover:-ms-input-placeholder,
+textarea:hover:-ms-input-placeholder {
+    opacity: .5;
+}
+input:hover::-ms-input-placeholder,
+textarea:hover::-ms-input-placeholder {
+    opacity: .5;
+}
+input:hover::placeholder,
+textarea:hover::placeholder {
+    opacity: .5;
+}
+textarea {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 6px;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    height: 146px;
+    width: 250px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(24%, white), color-stop(25.5%, var(--line)), color-stop(27%, white), color-stop(60.5%, white), color-stop(62%, var(--line)), color-stop(63.5%, white), color-stop(96%, white), color-stop(97.5%, var(--line)), color-stop(99%, white)) 0 0;
+    background: -o-linear-gradient(white 24%, var(--line) 25.5%, white 27%, white 60.5%, var(--line) 62%, white 63.5%, white 96%, var(--line) 97.5%, white 99%) 0 0;
+    background: linear-gradient(white 24%, var(--line) 25.5%, white 27%, white 60.5%, var(--line) 62%, white 63.5%, white 96%, var(--line) 97.5%, white 99%) 0 0;
+    border: 0;
+    line-height: 27px;
+    font-size: 14px;
+    cursor: text;
+}
+button {
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    border: 0;
+    background-color: var(--danger);
+    padding: 6px 21px;
+    border-radius: 20px;
+    text-shadow: 0px -1px 1px #6d1023;
+    margin-top: 22px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--dangerLighter);
+}
+button:focus {
+    background-color: var(--dangerDarker);
+}
+#errorMessage {
+    color: var(--danger);
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: -2px;
+}
+@media screen and (max-width: 600px) {
+    .form__content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .form__content-right {
+        margin-left: 0;
+    }
+    .form-field {
+        margin: 40px 0;
+    }
+    button {
+        margin: 60px 0 40px 0;
+        width: 100%;
+    }
+}
